@@ -92,10 +92,10 @@ export default function App() {
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
     accept: { 'video/*': ['.mp4', '.mov', '.webm'], 'audio/*': ['.mp3', '.wav', '.m4a'] },
-    maxSize: 24 * 1024 * 1024,
+    maxSize: 200 * 1024 * 1024,
     onDropRejected: (fileRejections) => {
       if (fileRejections[0]?.errors[0]?.code === 'file-too-large') {
-        setError('File is too large. Please upload under 24MB.');
+        setError('File is too large. Please upload under 200MB.');
       } else {
         setError('Invalid file format. Please upload video or audio.');
       }
@@ -238,7 +238,7 @@ export default function App() {
             <div className="p-4 bg-rose-50/50 rounded-2xl border border-rose-100">
               <div className="flex justify-between items-center mb-2">
                 <span className="text-xs font-bold text-rose-800">Student Video/Audio</span>
-                <span className="text-[10px] font-bold text-rose-400">Max 24MB</span>
+                <span className="text-[10px] font-bold text-rose-400">Max 200MB</span>
               </div>
               <div {...getRootProps()} className={cn("h-32 w-full rounded-xl flex flex-col items-center justify-center border-2 border-dashed transition-all cursor-pointer",
                 isDragActive ? "border-rose-400 bg-white scale-[1.02]" : "border-rose-200 bg-white hover:border-rose-300",
