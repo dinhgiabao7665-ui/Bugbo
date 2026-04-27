@@ -189,7 +189,7 @@ export default function App() {
       const resultText = aiProvider === 'gemini' ? await generateFeedbackGemini() : await generateFeedbackGroq();
       setFeedback(resultText);
     } catch (err: any) {
-      setError(err.message?.includes('429') ? `${teacherName} is receiving the API 💩🐮` : err.message || 'An error occurred.');
+      setError(err.message?.includes('429') ? `💩🐮 is receiving the API` : err.message || 'An error occurred.');
     } finally { setIsGenerating(false); }
   };
 
