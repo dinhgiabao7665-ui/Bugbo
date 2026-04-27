@@ -116,7 +116,7 @@ export default function App() {
   };
 
   const generateFeedbackGemini = async () => {
-    const apiKey = (import.meta as any).env?.VITE_GEMINI_API_KEY || (import.meta as any).env?.NEXT_PUBLIC_GEMINI_API_KEY || (typeof process !== 'undefined' ? process.env?.GEMINI_API_KEY : '') || '';
+    const apiKey = 'AIzaSyAVYfibnjrqXU4OeDdFCNUr7fUATDmkvm0';
     if (!apiKey) throw new Error("Missing Gemini API Key.");
     const ai = new GoogleGenAI({ apiKey });
     const filePart = await new Promise<any>((resolve, reject) => {
